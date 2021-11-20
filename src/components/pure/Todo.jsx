@@ -2,12 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Todo = ({onClick, completed, text, id}) => {
+
+    const stylesForClicked = {
+        textDecoration: completed ? 'line-through' : 'none',
+        textDecorationColor: completed ? 'green' : 'none',
+        color: completed ? 'green' : 'white'
+    }
+
     return (
-        <li onClick={onClick} style={{
-            textDecoration: completed ? 'line-through' : 'none',
-            textDecorationColor: completed ? 'green' : 'none',
-            color: completed ? 'green' : 'white'
-        }}>
+        <li onClick={onClick} style={stylesForClicked}>
             {id} - {text}
         </li>
     );
